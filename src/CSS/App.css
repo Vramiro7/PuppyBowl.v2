@@ -1,0 +1,29 @@
+body{
+	background-color: darkslategray;
+}
+
+.playerCard{
+	border-style: solid;
+	width: fit-content;
+	padding: 10px;
+	background: linear-gradient(blue, pink);
+}
+
+
+.pupImage{
+	width: 250px;
+	border-radius: 15%;
+	border-style: groove;
+	border-color: whitesmoke;
+}
+
+#displayedInfo{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.header{
+	display: flex;
+	justify-content: center;
+}
