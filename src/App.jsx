@@ -10,7 +10,7 @@ const BASE_API_URL = `https://fsa-puppy-bowl.herokuapp.com/api/${COHORT_NAME}/pl
 
 
 const App = () => {
-  
+
   return (
     <>
       <NavBar />
@@ -18,7 +18,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route 
           path="/players" 
-          element={<AllPlayerPage Base_url={BASE_API_URL} />} />
+          element={<AllPlayerPage Base_url={BASE_API_URL}/>} />
         <Route path="/players/:id" element={<DetailPage />} />
       </Routes>
     </>

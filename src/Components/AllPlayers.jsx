@@ -8,11 +8,10 @@ const AllPlayers = ({BASE_API_URL}) => {
 	const [playerList, setPlayerList] = useState([]);
 	// fetch all players from API
 
-	useEffect(() => {
-		fetchAllPlayers();
-	}, [])
-
-
+		useEffect(() => {
+				fetchAllPlayers();
+		}, [])
+	
 	const fetchAllPlayers = async () => {
 		try {
 			const response = await fetch(BASE_API_URL);
@@ -22,6 +21,7 @@ const AllPlayers = ({BASE_API_URL}) => {
 			console.error(err);
 		}
 	}
+	
 
 
 
@@ -34,9 +34,7 @@ const AllPlayers = ({BASE_API_URL}) => {
 				playerList.length ? 
 				playerList.map((player) => {
 					return (
-						<>
-							<ol><PlayerCard key={player.id} player={player} /></ol>
-						</>
+							<ol key={player.id}><PlayerCard key={player.id} player={player} BASE_API_URL={BASE_API_URL} /></ol>
 					)
 				})
 				: 

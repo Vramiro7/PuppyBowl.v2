@@ -1,12 +1,12 @@
 body{
-	background-color: darkslategray;
+	background-color: #00bbf0;
 }
 
 .playerCard{
 	border-style: solid;
 	width: fit-content;
 	padding: 10px;
-	background: linear-gradient(blue, pink);
+	background: linear-gradient(#005792,#fdb44b );
 }
 
 
@@ -14,7 +14,7 @@ body{
 	width: 250px;
 	border-radius: 15%;
 	border-style: groove;
-	border-color: whitesmoke;
+	border-color:  #00204a;
 }
 
 #displayedInfo{
