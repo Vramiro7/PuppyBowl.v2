@@ -1,11 +1,36 @@
+import { useState } from "react";
 
 
-const AddPlayerForm = () => {
+const AddPlayerForm = ({BASE_API_URL}) => {
 
-	const handleSubmit = (e) => {
+	const [name, setName] = useState("")
+	const [breed, setBreed] = useState("")
+	const [imageUrl, setImageUrl] = useState("")
+ 
+	const handleSubmit = async (e) => {
 		e.preventDefault();
+		try {
+			const response = await fetch(
+				BASE_API_URL,
+				{
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json',},
+					body: JSON.stringify({
+						name,
+						breed,
+						imageUrl,
+					}),
+				}
+			);
+			const result = await response.json();
+			setName("");
+			setBreed("");
+			setImageUrl("");
+		} catch (err) {
+			console.error(err);
+		}
 
-	}	
+ 	}	
 	
 
 
@@ -17,23 +42,29 @@ const AddPlayerForm = () => {
 						type="text"
 						placeholder="Name" 
 						id="name" 
-						onChange={(e) => {
-							e.target.value
-							console.log(e.target.value)
-						}}/>
+						value={name}
+						onChange={(e) => setName(e.target.value)}
+					/>
 				</label>
 				<label>
 					<input type="text" 
 						placeholder="Breed"
 						id="breed"
-						onChange={(e) => {
-							e.target.value
-							console.log(e.target.value)
-						}}
+						value={breed}
+						onChange={(e) => setBreed(e.target.value)}
 					/>
-				</label> <br />
+				</label> 
+				<label>
+					<input
+						type="text"
+						placeholder="Image" 
+						id="imageURL" 
+						value={imageUrl}
+						onChange={(e) => setImageUrl(e.target.value)}
+					/> 
+				</label><br />
 				<label> 
-					<input type="submit" />
+					<input type="submit" value="Add Puppy" />
 				</label>
 			</form>
 		</>

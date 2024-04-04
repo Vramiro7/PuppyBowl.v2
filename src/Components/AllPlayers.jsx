@@ -2,10 +2,8 @@ import { useEffect, useState } from "react";
 import PlayerCard from "./PlayerCard";
 
 
-const COHORT_NAME = `2402-FTB-ET-WEB-FT`
-const BASE_API_URL = `https://fsa-puppy-bowl.herokuapp.com/api/${COHORT_NAME}/players`
 
-const AllPlayers = () => {
+const AllPlayers = ({BASE_API_URL}) => {
 	// track all players in a state 
 	const [playerList, setPlayerList] = useState([]);
 	// fetch all players from API

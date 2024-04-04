@@ -5,7 +5,6 @@ import AllPlayerPage from './Pages/AllPlayerPage'
 import "../src/CSS/App.css" 
 import DetailPage from './Pages/DetailsPage'
 
-
 const COHORT_NAME = `2402-FTB-ET-WEB-FT`
 const BASE_API_URL = `https://fsa-puppy-bowl.herokuapp.com/api/${COHORT_NAME}/players`
 
@@ -19,8 +18,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route 
           path="/players" 
-          element={
-            <AllPlayerPage Base_url={BASE_API_URL} />} />
+          element={<AllPlayerPage Base_url={BASE_API_URL} />} />
         <Route path="/players/:id" element={<DetailPage />} />
       </Routes>
     </>
