@@ -19,7 +19,6 @@ const AllPlayers = () => {
 		try {
 			const response = await fetch(BASE_API_URL);
 			const result = await response.json();
-			console.log(result);
 			setPlayerList(result.data.players)
 		} catch (err) {
 			console.error(err);

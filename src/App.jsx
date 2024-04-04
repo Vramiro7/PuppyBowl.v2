@@ -3,6 +3,7 @@ import NavBar from './Components/NavBar'
 import Home from './Pages/Home'
 import AllPlayerPage from './Pages/AllPlayerPage'
 import "../src/CSS/App.css" 
+import DetailPage from './Pages/DetailsPage'
 
 
 const COHORT_NAME = `2402-FTB-ET-WEB-FT`
@@ -20,6 +21,7 @@ const App = () => {
           path="/players" 
           element={
             <AllPlayerPage Base_url={BASE_API_URL} />} />
+        <Route path="/players/:id" element={<DetailPage />} />
       </Routes>
     </>
   )
