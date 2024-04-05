@@ -6,6 +6,7 @@ const AddPlayerForm = ({BASE_API_URL}) => {
 	const [name, setName] = useState("")
 	const [breed, setBreed] = useState("")
 	const [imageUrl, setImageUrl] = useState("")
+
  
 	const handleSubmit = async (e) => {
 		e.preventDefault();
