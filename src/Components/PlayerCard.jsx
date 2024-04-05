@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const PlayerCard = ({player, BASE_API_URL}) => {
@@ -21,7 +22,7 @@ const PlayerCard = ({player, BASE_API_URL}) => {
 				<h2>{player.name}</h2>
 				<img className="pupImage" src={player.imageUrl} alt="Image of Player" />
 				<p>{player.breed}</p>
-				<button>Details</button><br />
+				<Link to={`/players/${player.id}`}><button>Details</button></Link><br />
 				<button onClick={clickHandler}>Exile</button>
 			</div>
 		</>

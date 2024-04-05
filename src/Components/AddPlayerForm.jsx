@@ -31,7 +31,7 @@ const AddPlayerForm = ({BASE_API_URL}) => {
 			console.error(err);
 		}
 
- 	}	
+	}	
 	
 
 
