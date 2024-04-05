@@ -1,8 +1,22 @@
-const DetailPage = () => {
+import { useState } from "react"
 
-  return(
+
+const DetailPage = ({BASE_API_URL}) => {
+  //set state for selected puppy 
+  const [selectedPlayer, setSelectedPlayer] = useState("")
+
+  //fetch single player from api
+  const fetchSinglePlayer = async () => {
+    
+  }
+  //set single player in a state
+  fetchSinglePlayer();
+
+  return (
     <>
-      <h3>Detail Page</h3>
+    {/* place player.name in h1 */}
+      <h1>Player</h1>
+    {/* display new player card with all player information of fetched player*/}
     </>
   )
 }

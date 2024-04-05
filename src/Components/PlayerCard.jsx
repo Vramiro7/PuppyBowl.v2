@@ -1,9 +1,15 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 
 const PlayerCard = ({player, BASE_API_URL}) => {
-	
 
+	const navigate = useNavigate();
+
+	const detailClickHandler = () => {
+		navigate(`/players/${player.id}`)
+	}
+	
 	const clickHandler = async () => {
 		try {
 			const response = await fetch( `${BASE_API_URL}/${player.id}` ,
@@ -16,14 +22,15 @@ const PlayerCard = ({player, BASE_API_URL}) => {
 			console.error(err);
 		}
 	}
+
 	return (
 		<>
 			<div className="playerCard">
 				<h2>{player.name}</h2>
 				<img className="pupImage" src={player.imageUrl} alt="Image of Player" />
 				<p>{player.breed}</p>
-				<Link to={`/players/${player.id}`}><button>Details</button></Link><br />
-				<button onClick={clickHandler}>Exile</button>
+				<button onClick={detailClickHandler}>Details</button><br />
+				<button onClick={clickHandler} >Exile</button> 
 			</div>
 		</>
 	)

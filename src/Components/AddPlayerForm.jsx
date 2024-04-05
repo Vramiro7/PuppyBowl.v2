@@ -33,8 +33,6 @@ const AddPlayerForm = ({BASE_API_URL}) => {
 
 	}	
 	
-
-
 	return (
 		<>
 			<form onSubmit={handleSubmit}>
