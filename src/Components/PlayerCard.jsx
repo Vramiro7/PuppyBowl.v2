@@ -1,7 +1,7 @@
 
 
 const PlayerCard = ({player, BASE_API_URL}) => {
-	console.log(player)
+	
 
 	const clickHandler = async () => {
 		try {
@@ -11,7 +11,6 @@ const PlayerCard = ({player, BASE_API_URL}) => {
 				}
 			);
 			const result = await response.json();
-			console.log(result);
 		} catch (err) {
 			console.error(err);
 		}
